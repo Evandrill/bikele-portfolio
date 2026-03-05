@@ -49,6 +49,7 @@ pids
 *.bak
 
 # Coverage directory used by tools like istanbul
+Jules/
 coverage/
 *.lcov
 
