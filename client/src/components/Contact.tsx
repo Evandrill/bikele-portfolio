@@ -132,10 +132,11 @@ export function Contact() {
             <div className="space-y-4">
               {/* Name */}
               <div>
-                <label className="block text-sm font-semibold text-charcoal mb-2">
+                <label htmlFor="contact-name" className="block text-sm font-semibold text-charcoal mb-2">
                   {contactContent.form.name}
                 </label>
                 <input
+                  id="contact-name"
                   type="text"
                   name="name"
                   value={formData.name}
@@ -147,10 +148,11 @@ export function Contact() {
 
               {/* Email */}
               <div>
-                <label className="block text-sm font-semibold text-charcoal mb-2">
+                <label htmlFor="contact-email" className="block text-sm font-semibold text-charcoal mb-2">
                   {contactContent.form.email}
                 </label>
                 <input
+                  id="contact-email"
                   type="email"
                   name="email"
                   value={formData.email}
@@ -162,10 +164,11 @@ export function Contact() {
 
               {/* Subject */}
               <div>
-                <label className="block text-sm font-semibold text-charcoal mb-2">
+                <label htmlFor="contact-subject" className="block text-sm font-semibold text-charcoal mb-2">
                   {contactContent.form.subject}
                 </label>
                 <input
+                  id="contact-subject"
                   type="text"
                   name="subject"
                   value={formData.subject}
@@ -177,10 +180,11 @@ export function Contact() {
 
               {/* Message */}
               <div>
-                <label className="block text-sm font-semibold text-charcoal mb-2">
+                <label htmlFor="contact-message" className="block text-sm font-semibold text-charcoal mb-2">
                   {contactContent.form.message}
                 </label>
                 <textarea
+                  id="contact-message"
                   name="message"
                   value={formData.message}
                   onChange={handleChange}

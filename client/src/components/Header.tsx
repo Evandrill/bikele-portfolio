@@ -79,6 +79,8 @@ export function Header() {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
+            aria-label={isMenuOpen ? "Close menu" : "Open menu"}
+            aria-expanded={isMenuOpen}
             className="lg:hidden p-2 hover:bg-muted rounded-lg transition-colors"
           >
             {isMenuOpen ? (
