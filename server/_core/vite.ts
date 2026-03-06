@@ -48,7 +48,14 @@ export async function setupVite(app: Express, server: Server) {
 }
 
 export function serveStatic(app: Express) {
-  const distPath = path.resolve(import.meta.dirname, "../..", "dist", "public");
+  const candidatePaths = [
+    // Most hosting providers run the app from the repo root (where package.json lives)
+    path.resolve(process.cwd(), "dist", "public"),
+    // Fallback when running from a bundled file inside dist/
+    path.resolve(import.meta.dirname, "../..", "dist", "public"),
+  ];
+
+  const distPath = candidatePaths.find((p) => fs.existsSync(p)) ?? candidatePaths[0];
   if (!fs.existsSync(distPath)) {
     console.error(
       `Could not find the build directory: ${distPath}, make sure to build the client first`
